@@ -1,0 +1,12 @@
+HTTrack3.49-2 launched on Thu, 07 Jul 2022 02:51:00 at https://bitcoin.org/tr/ +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(httrack -@i4 -O /storage/emulated/0/HTTrack/Websites/btcminercoin -A25000k%Px%q0u1s2%s%u%fDaK0H0N0p3 https://bitcoin.org/tr/ +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2017], %s -->" -%l LANGUAGE_ISO,* )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+02:52:41	Error: 	"Not Found" (404) at link https://bitcoin.org/css/TitilliumWeb-Regular.ttf (from https://bitcoin.org/css/main.css?1656252469)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 22 seconds : 174 links scanned, 172 files written (14015873 bytes overall) [2768186 bytes received at 19494 bytes/sec], 12374576 bytes transferred using HTTP compression in 93 files, ratio 8%, 29.0 requests per connection
+(1 errors, 0 warnings, 0 messages)
