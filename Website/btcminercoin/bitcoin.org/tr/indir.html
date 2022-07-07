@@ -1,0 +1,813 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+
+
+
+
+<!-- Mirrored from bitcoin.org/tr/indir by HTTrack Website Copier/3.x [XR&CO'2017], Wed, 06 Jul 2022 23:51:44 GMT -->
+<head>
+
+
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta property="og:image" content="../img/icons/opengraph81d6.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>İndir - Bitcoin</title>
+
+<link rel="stylesheet" href="../css/font-awesome-4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/main81d6.css">
+<!--[if lt IE 8]><link rel="stylesheet" href="/css/ie.css"><script type="text/javascript" src="/js/ie.js"></script><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" href="/css/ie8.css"><![endif]-->
+
+<link rel="stylesheet" href="../css/sans81d6.css">
+<script type="text/javascript" src="../js/base81d6.js"></script>
+<script type="text/javascript" src="../js/main81d6.js"></script>
+<script src="../js/jquery/jquery-1.11.2.min.js"></script>
+<script src="../js/jquery/jquery-ui.min.js"></script>
+<script src="../js/jquery/jquery.qrcode.min.js"></script>
+<link rel="shortcut icon" href="../favicon81d6.png">
+<link rel="apple-touch-icon-precomposed" href="../img/icons/logo_ios81d6.png"/>
+<script>
+    window.cookieconsent_options = {
+        theme: 'light-floating'
+    }
+</script>
+<script type="text/javascript" src="../js/cookieconsent/cookieconsent81d6.js"></script>
+<script>
+if( navigator.doNotTrack != "yes" && navigator.doNotTrack != "1" && window.doNotTrack != "1" && navigator.msDoNotTrack != "1" ){
+	var script = document.createElement('script');
+	script.src = '../js/analytics.js'
+	document.getElementsByTagName("head")[0].appendChild(script);
+}
+</script>
+
+</head>
+
+<body>
+
+
+
+<div class="donation-container">
+  <div class="donation-text">
+    <div class="donation-text-container">
+      <button onclick="closeDonationBanner()" class="donation-modal-close">
+        <img src="../../external.html?link=https://bitcoin.org/img/icons/ico_close.svg?1656252469" alt="Close">
+      </button>
+      <p>
+        Bitcoin.org is a community funded project, donations are appreciated and used to improve the website.
+      </p>
+      <button type="button" class="donation-btn" onclick="openDonationModal()">
+        Make a donation
+      </button>
+    </div>
+  </div>
+  <button type="button" class="donation-visibility-toggle" onclick="toggleDonationBanner()">
+    Bitcoin.org needs your support!
+  </button>
+</div>
+
+
+
+<div id="donation-modal" style="display: none" class="donation-modal hidden">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
+      <p class="modal-header-text section-title">Donate to Bitcoin.org</p>
+    </div>
+    <p class="modal-subheader">Use this QR code or address below</p>
+    <div style="text-align: center;">
+      <div id="donation-qr-code" data-address="3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"></div>
+    </div>
+    <div>
+      <a
+        class="donation-btc-address"
+        href="bitcoin:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"
+        target="_blank">
+        3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd
+      </a>
+    </div>
+    <div class="modal-body bg-white" style="overflow-y:hidden;text-align: center;">
+      <div>
+        
+        <button type="button" class="donation-amount-btn" data-amount-usd="5">
+          $5.00
+          <div class="donation-amount-usd-in-btc">(... BTC)</div>
+        </button>
+        
+        <button type="button" class="donation-amount-btn" data-amount-usd="25">
+          $25.00
+          <div class="donation-amount-usd-in-btc">(... BTC)</div>
+        </button>
+        
+        <button type="button" class="donation-amount-btn" data-amount-usd="50">
+          $50.00
+          <div class="donation-amount-usd-in-btc">(... BTC)</div>
+        </button>
+        
+      </div>
+
+      <div>
+        <input
+          style="margin-right: 15px"
+          type="text"
+          placeholder="Or custom amount? (BTC)"
+          id="donation-input-amount-btc" class="donation-amount-input">
+        <input
+          type="text"
+          placeholder="Or custom amount? (USD)"
+          id="donation-input-amount-usd" class="donation-amount-input">
+      </div>
+
+      <div>
+        <textarea
+          class="donation-amount-input"
+          id="donation-input-message"
+          placeholder="Optional description (for your wallet)"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="detectmobile" class="detectmobile"></div>
+
+
+
+
+
+
+
+
+
+
+<div class="head"><div>
+  
+
+<a id="menumobile" class="menumobile" onclick="mobileMenuShow(event);" ontouchstart="mobileMenuShow(event);"></a>
+
+  
+    
+
+<a class="logo" href="index.html"><img src="../../external.html?link=https://bitcoin.org/img/icons/logotop.svg?1656252469" alt="Bitcoin"></a>
+
+    
+
+<ul id="menusimple" class="menusimple menumain" onclick="mobileMenuHover(event);" ontouchstart="mobileMenuHover(event);">
+  <li><a class="is-expand">Giriş</a>
+    <ul>
+      <li><a href="bireyler-icin-bitcoin.html">Bireyler</a></li>
+      <li><a href="isletmeler-icin-bitcoin.html">İşletmeler</a></li>
+      <li><a href="../../external.html?link=https://developer.bitcoin.org/">Geliştiriciler</a></li>
+      <li><a href="baslarken.html">Başlarken</a></li>
+      <li><a href="nasil-calisir.html">Nasıl Çalışır</a></li>
+      
+    </ul>
+  </li>
+  <li><a class="is-expand">Kaynaklar</a>
+    <ul>
+      <li><a href="kaynaklar.html">Kaynaklar</a>
+      <li><a href="borsalari.html">Exchanges</a></li>
+      <li><a href="topluluk.html">Topluluk</a></li>
+      
+      
+      <li><a href="kelime-haznesi.html">Sözlük</a></li>
+      <li><a href="etkinlikler.html">Etkinlikler</a></li>
+      
+        <li class="active"><a href="indir.html">Bitcoin Core</a></li>
+      
+    </ul>
+  </li>
+  <li><a href="yenilik.html">Yenilik</a></li>
+  <li><a class="is-expand">Katılın</a>
+    <ul>
+      <li><a href="bitcoini-destekleyin.html">Bitcoin'i Destekleyin</a>
+      <li><a href="satin.html">Buy Bitcoin</a></li>
+      
+      <li><a href="gelistirme.html">Gelişim</a></li>
+    </ul>
+  </li>
+  <li><a href="sss.html">SSS</a></li>
+</ul>
+
+  
+    
+<ul class="lang is-expand">
+  <li><a>Türkçe</a>
+  <ul>
+    <li><ul>
+      
+      
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/id/unduh">Bahasa Indonesia</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ca/descarrega">Català</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/da/hent">Dansk</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/de/download">Deutsch</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/en/download">English</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/es/descargar">Español</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/fr/telecharger">Français</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/it/scarica">Italiano</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/hu/letoltes">Magyar</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/nl/download">Nederlands</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/pl/pobieranie">Polski</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/pt_BR/download">Português Brasil</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ro/descarca">Română</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/sl/prenos">Slovenščina</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/sr/preuzimanje">Srpski</a></li>
+        
+        </ul></li><li><ul>
+          <li><a href="../../external.html?link=https://bitcoin.org/sv/ladda-ner">Svenska</a></li>
+        
+        
+          <li><a href="indir.html" class="active">Türkçe</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/el/download">Ελληνικά</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/bg/download">български</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ru/download">Русский</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/uk/download">Українська</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ar/download">العربية</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/fa/download">فارسی</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/he/download">עברית</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/hi/download">हिन्दी</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ko/download">한국어</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ja/download">日本語</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/zh_CN/download">简体中文</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/zh_TW/download">繁體中文</a></li>
+        
+      </ul></li>
+    </ul>
+  </li>
+</ul>
+
+    
+<div id="langselect" class="langselect">
+    <label for="select-input" class="center-select">
+        <select id="select-input" class="center-select__input" onchange="window.location=this.value;">
+            
+            <option value="/id/unduh" >Bahasa Indonesia</option>
+            
+            <option value="/ca/descarrega" >Català</option>
+            
+            <option value="/da/hent" >Dansk</option>
+            
+            <option value="/de/download" >Deutsch</option>
+            
+            <option value="/en/download" >English</option>
+            
+            <option value="/es/descargar" >Español</option>
+            
+            <option value="/fr/telecharger" >Français</option>
+            
+            <option value="/it/scarica" >Italiano</option>
+            
+            <option value="/hu/letoltes" >Magyar</option>
+            
+            <option value="/nl/download" >Nederlands</option>
+            
+            <option value="/pl/pobieranie" >Polski</option>
+            
+            <option value="/pt_BR/download" >Português Brasil</option>
+            
+            <option value="/ro/descarca" >Română</option>
+            
+            <option value="/sl/prenos" >Slovenščina</option>
+            
+            <option value="/sr/preuzimanje" >Srpski</option>
+            
+            <option value="/sv/ladda-ner" >Svenska</option>
+            
+            <option value="/tr/indir"  selected="selected">Türkçe</option>
+            
+            <option value="/el/download" >Ελληνικά</option>
+            
+            <option value="/bg/download" >български</option>
+            
+            <option value="/ru/download" >Русский</option>
+            
+            <option value="/uk/download" >Українська</option>
+            
+            <option value="/ar/download" >العربية</option>
+            
+            <option value="/fa/download" >فارسی</option>
+            
+            <option value="/he/download" >עברית</option>
+            
+            <option value="/hi/download" >हिन्दी</option>
+            
+            <option value="/ko/download" >한국어</option>
+            
+            <option value="/ja/download" >日本語</option>
+            
+            <option value="/zh_CN/download" >简体中文</option>
+            
+            <option value="/zh_TW/download" >繁體中文</option>
+            
+        </select>
+        <span class="center-select__text">Language: <span class="is-capital">tr</span></span>
+    </label>
+</div>
+
+</div></div>
+
+<div class="body">
+  
+  
+
+<div id="content" class="content">
+    
+<!-- Note: this file exempt from check-for-subheading-anchors check -->
+
+
+
+<link rel="alternate" type="application/rss+xml" href="../../external.html?link=https://bitcoin.org/en/rss/releases.rss" title="Bitcoin Core releases">
+
+<div class="download">
+
+  <div class="hero">
+    <div class="container hero-container">
+      <h1>Bitcoin Core'u indir</h1>
+      <h2 class="summary">Son sürüm: 22.0
+        <!-- <a type="application/rss+xml" href="/en/rss/releases.rss">
+          <img src="/img/icons/icon_rss.svg?1656252469" alt="rss" class="rssicon">
+        </a> -->
+      </h2>
+    </div>
+  </div>
+  
+  <div class="container core-content clearfix">
+    <div class="core-column-left clearfix">
+      <div class="mainbutton">
+        <a id="downloadbutton" href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-win64-setup.exe">
+          <!-- <img src="/img/os/but_windows.svg?1656252469" alt="icon"> -->
+          Bitcoin Core İndirin
+        </a>
+        <p class="btn-subtext">Bitcoin Core 22.0</p>
+        <hr class="separator btn-separator">
+      </div>
+    </div>
+
+    <div class="core-column-right clearfix">
+      <div style="margin-bottom: 20px;"><b style="color: #d02020;">(This software is presently not available for download in the UK, and download links will not work if you are located within the UK.)</b></div>
+      <h2 class="download-title">Sabırlı olmalısınız</h2>
+      <p class="download-text">Bitcoin Core'un ilk senkronizasyonu biraz zaman alabilir. Blok zincir boyutu'nun (65 GB'nin üzerinde) tamamı için güçlü bir bağlantınızın ve yeterli depolama alanınızın olduğundan emin olmalısınız. Eğer torrent dosyalarının nasıl indirildiğini biliyorsanız, uygulamanızı başlatmadan önce <a href="../../external.html?link=https://bitcoin.org/bin/blockchain/bootstrap.dat.torrent">bootstrap.dat</a>(blok zincirinin önceki kopyası) dosyasını Bitcoin Core veri dizinine yerleştirerek süreci hızlandırabilirsiniz. Read the <a href="../../external.html?link=https://bitcoin.org/en/full-node">full node guide</a> for details.</p>
+      <p class="download-text">Bitcoin Core kişiler tarafından geliştirilen <a href="../../external.html?link=https://www.fsf.org/about/what-is-free-software">ücretsiz yazılım</a> projesidir, <a href="../../external.html?link=http://opensource.org/licenses/mit-license.php">MIT lisansı</a> altında yayınlanır.</p>
+      
+      <div class="downloadmore">
+        <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/SHA256SUMS.asc" class="dl core-link">Gönderme imzalarını onayla </a>
+        <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0.torrent" class="dl core-link">Download torrent</a>
+        
+        <a href="magnet:?xt=urn:btih:1538a3b3962215f12e0e5f60105457332cf8fee4&amp;dn=bitcoin-core-22.0&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969" class="magnetlink core-link" data-proofer-ignore></a>
+        <a href="../../external.html?link=https://github.com/bitcoin/bitcoin" class="dl core-link">Source code</a>
+        <a href="../../external.html?link=https://bitcoin.org/en/version-history" class="core-link">Sürüm geçmişini göster</a>
+      </div>
+
+      <div class="downloadkeys">
+        <span class="download-text downloadkeys-title">Bitcoin Core Release Signing Keys</span>
+        <a class="core-link" href="../../external.html?link=https://bitcoin.org/legacy-releases.asc">v0.8.6 - 0.9.2.1</a>
+        <a class="core-link" href="../../external.html?link=https://bitcoin.org/laanwj.asc">v0.9.3 - 0.10.2</a>
+        <a class="core-link" href="../../external.html?link=https://bitcoin.org/laanwj-releases.asc">v0.11.0+</a>
+      </div>
+      
+    </div>
+    
+    <div class="downloadbox core-column-left clearfix">
+      <p class="corecard-label">Veya işletim sisteminizi seçin</p>
+
+        <div class="corecard windows-card">
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-win64-setup.exe" id="downloadwinexe">Windows</a>
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-win64-setup.exe" class="dl download-link" id="win64exe">exe</a>
+          <span> - </span>
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-win64.zip" class="dl download-link" id="win64zip">zip</a>
+        </div>
+
+        <div class="corecard mac-card">
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-osx-signed.dmg">Mac OS X</a>
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-osx-signed.dmg" class="dl download-link" id="macdmg">dmg</a>
+          <span> - </span>
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-osx64.tar.gz" class="dl download-link" id="mactar">tar.gz</a>
+        </div>
+
+        <div class="corecard linux-card">
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-x86_64-linux-gnu.tar.gz" id="downloadlin">Linux (tgz)</a>
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-x86_64-linux-gnu.tar.gz" class="dl download-link" id="lin64">64 bit</a> 
+        </div>
+
+        <div class="corecard arm-card">
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-arm-linux-gnueabihf.tar.gz" class="dl">ARM Linux</a>
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-aarch64-linux-gnu.tar.gz" class="dl download-link" id="lin64arm">64 bit</a> 
+          <span> - </span>
+          <a href="../../external.html?link=https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-arm-linux-gnueabihf.tar.gz" class="dl download-link" id="lin32arm">32 bit</a>
+        </div>
+
+        <div class="corecard snap-card">
+          <a href="../../external.html?link=https://snapcraft.io/bitcoin-core">Linux (Snap Store)</a>
+        </div>
+    </div>
+    
+    
+  </div>
+</div>
+<script type="text/javascript">
+var os = 'windows64';
+if (navigator.userAgent.indexOf('Mac') != -1) var os = 'mac'
+else if (navigator.userAgent.indexOf('Linux') != -1) {
+	var os='linux32';
+	if (navigator.userAgent.indexOf('x86_64') != -1) var os = 'linux64';
+	if (navigator.userAgent.indexOf('Ubuntu') != -1) var os = 'snap';
+}
+else if (navigator.userAgent.indexOf('WOW64') != -1 || navigator.userAgent.indexOf('Win64') != -1) var os='windows64';
+var but = document.getElementById('downloadbutton');
+var linkwinexe = document.getElementById('downloadwinexe');
+var linkwinzip = document.getElementById('downloadwinzip');
+var linklin = document.getElementById('downloadlin');
+var hrefwin64exe = document.getElementById('win64exe').href;
+var hrefwin64zip = document.getElementById('win64zip').href;
+var hrefmacdmg = document.getElementById('macdmg').href;
+var hrefmactar = document.getElementById('mactar').href;
+var hreflin64 = document.getElementById('lin64').href;
+switch (os) {
+case 'windows64':
+	but.href = hrefwin64exe;
+	linkwinexe.href = hrefwin64exe;
+	linkwinzip.href = hrefwin64zip;
+break;
+case 'linux64':
+	but.href = hreflin64;
+	linklin.href = hreflin64;
+break;
+case 'snap':
+	but.href = '../../external.html?link=https://snapcraft.io/bitcoin-core';
+break;
+case 'mac':
+	but.href = hrefmacdmg;
+break;
+}
+
+</script>
+
+
+</div>
+
+  <div class="footer">
+    <div class="container">
+      
+
+<a class="logo-footer" href="index.html">
+  <img src="../../external.html?link=https://bitcoin.org/img/icons/logo-footer.svg?1656252469" alt="Bitcoin">
+</a>
+      
+
+<div class="row footer-row">
+  <div class="donate">
+    <div class="row donate-row">
+      <div>
+        <span class="footer-title">Support Bitcoin.org:</span>
+        <a onclick="openDonationModal()" class="donate-btn btn-bright">Donate</a>
+        <p class="donate-text">
+          <a class="donate-link" href="bitcoin:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd" target="_blank">3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row footermenu">
+    <div class="footermenu-item footermenu-introduction">
+      <p class="footer-title">Giriş:</p>
+      <ul class="footermenu-list">
+        <li>
+          <a href="bireyler-icin-bitcoin.html">Bireyler</a>
+        </li>
+        <li>
+          <a href="isletmeler-icin-bitcoin.html">İşletmeler</a>
+        </li>
+        <li>
+          <a href="../../external.html?link=https://developer.bitcoin.org/">Geliştiriciler</a>
+        </li>
+        <li>
+          <a href="baslarken.html">Başlarken</a>
+        </li>
+        <li>
+          <a href="nasil-calisir.html">Nasıl Çalışır</a>
+        </li>
+        <li>
+          <a href="bilmeniz-gerekenler.html">Bilmeniz gerekenler</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+    <div class="footermenu-item footermenu-resources">
+      <p class="footer-title">Kaynaklar:</p>
+      <ul class="footermenu-list">
+        <li>
+          <a href="kaynaklar.html">Kaynaklar</a>
+        <li>
+          <a href="borsalari.html">Exchanges</a>
+        </li>
+        <li>
+          <a href="topluluk.html">Topluluk</a>
+        </li>
+        <li>
+          <a href="kelime-haznesi.html">Sözlük
+          </a>
+        </li>
+        <li>
+          <a href="etkinlikler.html">Etkinlikler</a>
+        </li>
+        
+          <li class="active">
+            <a href="indir.html">Bitcoin Core</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+    <div class="footermenu-item footermenu-participate">
+      <p class="footer-title">Katılın:</p>
+      <ul class="footermenu-list">
+        <li>
+          <a href="bitcoini-destekleyin.html">Bitcoin'i Destekleyin</a>
+        
+        
+        <li>
+          <a href="gelistirme.html">Gelişim</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footermenu-item footermenu-other">
+      <p class="footer-title">Other:</p>
+      
+      <a href="yasal.html">Yasal</a>
+      
+      <a href="../../external.html?link=https://bitcoin.org/en/privacy">Privacy Policy</a>
+      
+      <a href="basin.html">Basın</a>
+      <a href="hakkimizda.html">Bitcoin.org hakkında</a>
+      <a href="../../external.html?link=https://bitcoin.org/en/blog">Blog</a>
+    </div>
+  </div>
+</div>
+
+    </div>
+    
+
+<div class="footer-bottom">
+  <div class="container">
+    <div class="row footer-bottom-row">
+      <div class="footerlicense">© Bitcoin Project 2009-2022 <a href="../../external.html?link=http://opensource.org/licenses/mit-license.php" target="_blank">MIT lisansı</a> altında yayınlanmaktadır
+        <br> Bitcoin Core pages on Bitcoin.org are
+        <a href="../../external.html?link=https://bitcoin.org/en/bitcoin-core/about-site">maintained separately</a> from the rest of the site.
+      </div>
+      <div class="row footer-status-block">
+        <a href="../../external.html?link=https://bitcoin.org/en/alerts" class="statusmenu">Network Status</a>
+        
+<ul class="lang is-expand">
+  <li><a>Türkçe</a>
+  <ul>
+    <li><ul>
+      
+      
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/id/unduh">Bahasa Indonesia</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ca/descarrega">Català</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/da/hent">Dansk</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/de/download">Deutsch</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/en/download">English</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/es/descargar">Español</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/fr/telecharger">Français</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/it/scarica">Italiano</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/hu/letoltes">Magyar</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/nl/download">Nederlands</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/pl/pobieranie">Polski</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/pt_BR/download">Português Brasil</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ro/descarca">Română</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/sl/prenos">Slovenščina</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/sr/preuzimanje">Srpski</a></li>
+        
+        </ul></li><li><ul>
+          <li><a href="../../external.html?link=https://bitcoin.org/sv/ladda-ner">Svenska</a></li>
+        
+        
+          <li><a href="indir.html" class="active">Türkçe</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/el/download">Ελληνικά</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/bg/download">български</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ru/download">Русский</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/uk/download">Українська</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ar/download">العربية</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/fa/download">فارسی</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/he/download">עברית</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/hi/download">हिन्दी</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ko/download">한국어</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/ja/download">日本語</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/zh_CN/download">简体中文</a></li>
+        
+        
+          <li><a href="../../external.html?link=https://bitcoin.org/zh_TW/download">繁體中文</a></li>
+        
+      </ul></li>
+    </ul>
+  </li>
+</ul>
+
+        <div id="footer-langselect" class="footer-langselect langselect">
+          <label for="select-input-footer" class="center-select">
+            <select class="center-select__input" onchange="window.location=this.value; ">
+              
+              <option value="/id/unduh" >Bahasa Indonesia</option>
+              
+              <option value="/ca/descarrega" >Català</option>
+              
+              <option value="/da/hent" >Dansk</option>
+              
+              <option value="/de/download" >Deutsch</option>
+              
+              <option value="/en/download" >English</option>
+              
+              <option value="/es/descargar" >Español</option>
+              
+              <option value="/fr/telecharger" >Français</option>
+              
+              <option value="/it/scarica" >Italiano</option>
+              
+              <option value="/hu/letoltes" >Magyar</option>
+              
+              <option value="/nl/download" >Nederlands</option>
+              
+              <option value="/pl/pobieranie" >Polski</option>
+              
+              <option value="/pt_BR/download" >Português Brasil</option>
+              
+              <option value="/ro/descarca" >Română</option>
+              
+              <option value="/sl/prenos" >Slovenščina</option>
+              
+              <option value="/sr/preuzimanje" >Srpski</option>
+              
+              <option value="/sv/ladda-ner" >Svenska</option>
+              
+              <option value="/tr/indir"  selected="selected">Türkçe</option>
+              
+              <option value="/el/download" >Ελληνικά</option>
+              
+              <option value="/bg/download" >български</option>
+              
+              <option value="/ru/download" >Русский</option>
+              
+              <option value="/uk/download" >Українська</option>
+              
+              <option value="/ar/download" >العربية</option>
+              
+              <option value="/fa/download" >فارسی</option>
+              
+              <option value="/he/download" >עברית</option>
+              
+              <option value="/hi/download" >हिन्दी</option>
+              
+              <option value="/ko/download" >한국어</option>
+              
+              <option value="/ja/download" >日本語</option>
+              
+              <option value="/zh_CN/download" >简体中文</option>
+              
+              <option value="/zh_TW/download" >繁體中文</option>
+              
+            </select>
+            <span class="center-select__text">tr</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  fallbackSVG();
+  addAnchorLinks();
+  trackOutgoingLinks();
+  toggleDarkMode();
+</script>
+
+
+
+
+
+
+</body>
+
+
+<!-- Mirrored from bitcoin.org/tr/indir by HTTrack Website Copier/3.x [XR&CO'2017], Wed, 06 Jul 2022 23:51:45 GMT -->
+</html>
